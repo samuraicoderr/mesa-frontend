@@ -1,4 +1,4 @@
-# MESA — Medical Expert System Assistant
+# MESA (Medical Expert System Assistant)
 
 ![MESA Demo Screenshot](/sen-grp-1-frontend.vercel.app_mesa.png)
 
