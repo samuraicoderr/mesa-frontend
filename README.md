@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MESA — Medical Expert System Assistant
 
-## Getting Started
+![MESA Demo Screenshot](/sen-grp-1-frontend.vercel.app_mesa.png)
 
-First, run the development server:
+MESA (Medical Expert System Assistant) is a hybrid medical support system that combines a language model with a rule-based expert system. The goal is simple: let users describe how they feel in plain English, then turn that into possible conditions using structured reasoning.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+It is built with a Next.js frontend and a Django Ninja backend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What it does
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+MESA takes a conversational input from a user, pulls out relevant symptoms, runs them through an inference engine, and returns possible conditions along with a clear explanation.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## How it works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. The user describes symptoms in natural language
+2. A language model (like LLaMA) extracts key symptoms from the text
+3. Those symptoms are passed into an Experta-based inference engine
+4. The engine evaluates predefined medical rules
+5. Possible conditions are returned
+6. The AI layer adds a readable explanation for the user
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The idea is to combine the flexibility of AI with the structure of an expert system.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Frontend
+
+* Next.js
+
+Backend
+
+* Django Ninja
+* Experta (rule engine)
+
+AI layer
+
+* LLaMA (or similar LLMs)
+
+---
+
+## Why this approach
+
+Pure LLM systems can sound convincing but are not always consistent. Rule-based systems are consistent but rigid.
+
+MESA sits in the middle:
+
+* The LLM understands messy human input
+* The rule engine handles actual reasoning
+
+That separation makes the system easier to trust and debug.
+
+---
+
+## Disclaimer
+
+This is not a medical tool and should not be used for diagnosis or treatment.
+
+It is a research/academic project.
+
+---
+
+## Future work
+
+* Better symptom extraction accuracy
+* Expanded medical rule base
+* Confidence scoring for outputs
+* Improved UI/UX
+* Support for more languages
+
+---
+
+## Authors
+
+Built as part of a final year project.
